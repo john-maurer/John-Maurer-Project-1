@@ -1,0 +1,69 @@
+Features
+
+NOTE: Require's Existing Outlet Record along with existing Items and Features
+
+1. Sign-In
+
+1.1 Sign-In Option visible when signed out
+1.1.1 Partial View center-screen
+1.1.1.2 Username Dialog
+1.1.1.3 Password Dialog
+1.1.1.4 Login Button
+1.1.1.5 Clear Button
+1.1.1.6 Password Recovery Button
+1.1.1.6.1 Send E-mail with password (in lieu of code system, no time)
+1.2 Sign-Out Option visible when signed in
+1.2.1 Header Link Button
+
+2. Shell
+
+1. Create Outlet
+1.1 Requires Outlet Address Information
+1.2 Requires one Employee (Owner)
+1.2.1 Person Information (Owner)
+1.2.2 Person Address Information (Owner)
+1.2.3 Address Information (Outlet)
+1.3 Requires one Item (Pizza)
+1.3.1 Requires one Feature (Pepperoni)
+1.4 Scaffold one dummy order (behind the scenes)
+1.4.1 Scaffold one dummy Person (behind the scenes)
+
+3. Public Access (MVC)
+
+1. Create Order
+1.1 Select Item(s)
+1.2 Remove Items
+1.1.1 Add Feature(s)
+1.2.1 Remove Features
+1.2 Customer (Person) Information
+1.2.1 Address Information
+2. Present Final Order and Reciept
+2.1 Go Back Functionality
+3. Finalize Order
+3.1 Send E-mail
+
+4. Private Access (MVC)
+
+1. Add/Remove Item
+1.1 Table Displaying Existing Items and Associate Features (Later should be Short-hand, name only)
+1.1.1 Existing Items editable from table
+1.1.1.1 Item Update Queue
+1.2 Dialog for adding Items
+1.2.1 Field Textboxes for record *
+1.2.2 Update and Clear Buttons *
+2. Add/Remove Feature
+2.1 Table for existing Features
+2.2 Dialog for adding Features
+2.2.1 Field Textboxes for record *
+2.2.2 Update and Clear Buttons *
+3. Add/Remove Employee
+3.1 Table displaying All Existing Employees
+3.1.1 Updatable from Table
+3.1.1.1 Update Queue
+3.2 Far-right button for removal
+3.3 Dialog for adding new employee
+4. View Sales
+3.1 Table displaying All Existing Orders
+3.1.2 Total Sales and Sales Tax *
+3.2 View by month/year
+3.1.2 Total Sales and Sales Tax *

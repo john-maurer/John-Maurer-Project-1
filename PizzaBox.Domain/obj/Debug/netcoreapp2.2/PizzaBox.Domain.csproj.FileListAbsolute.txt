@@ -1,0 +1,12 @@
+C:\Users\jmau0\Desktop\Revature\DOT NET CORE Week 1-3 Jump\Project-1\PizzaBox.Domain\bin\Debug\netcoreapp2.2\PizzaBox.Domain.deps.json
+C:\Users\jmau0\Desktop\Revature\DOT NET CORE Week 1-3 Jump\Project-1\PizzaBox.Domain\bin\Debug\netcoreapp2.2\PizzaBox.Domain.dll
+C:\Users\jmau0\Desktop\Revature\DOT NET CORE Week 1-3 Jump\Project-1\PizzaBox.Domain\bin\Debug\netcoreapp2.2\PizzaBox.Domain.pdb
+C:\Users\jmau0\Desktop\Revature\DOT NET CORE Week 1-3 Jump\Project-1\PizzaBox.Domain\obj\Debug\netcoreapp2.2\PizzaBox.Domain.csproj.CoreCompileInputs.cache
+C:\Users\jmau0\Desktop\Revature\DOT NET CORE Week 1-3 Jump\Project-1\PizzaBox.Domain\obj\Debug\netcoreapp2.2\PizzaBox.Domain.AssemblyInfoInputs.cache
+C:\Users\jmau0\Desktop\Revature\DOT NET CORE Week 1-3 Jump\Project-1\PizzaBox.Domain\obj\Debug\netcoreapp2.2\PizzaBox.Domain.AssemblyInfo.cs
+C:\Users\jmau0\Desktop\Revature\DOT NET CORE Week 1-3 Jump\Project-1\PizzaBox.Domain\obj\Debug\netcoreapp2.2\PizzaBox.Domain.dll
+C:\Users\jmau0\Desktop\Revature\DOT NET CORE Week 1-3 Jump\Project-1\PizzaBox.Domain\obj\Debug\netcoreapp2.2\PizzaBox.Domain.pdb
+C:\Users\jmau0\Desktop\Revature\DOT NET CORE Week 1-3 Jump\Project-1\PizzaBox.Domain\obj\Debug\netcoreapp2.2\PizzaBox.Domain.csprojAssemblyReference.cache
+C:\Users\jmau0\Desktop\Revature\DOT NET CORE Week 1-3 Jump\Project-1\PizzaBox.Domain\bin\Debug\netcoreapp2.2\PizzaBox.Data.dll
+C:\Users\jmau0\Desktop\Revature\DOT NET CORE Week 1-3 Jump\Project-1\PizzaBox.Domain\bin\Debug\netcoreapp2.2\PizzaBox.Data.pdb
+C:\Users\jmau0\Desktop\Revature\DOT NET CORE Week 1-3 Jump\Project-1\PizzaBox.Domain\obj\Debug\netcoreapp2.2\PizzaBox.Domain.csproj.CopyComplete

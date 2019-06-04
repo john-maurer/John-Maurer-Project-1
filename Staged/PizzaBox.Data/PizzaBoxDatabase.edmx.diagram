@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="591bb9884c364d348f2acc74e8f6587f" Name="Diagram1" ZoomLevel="72" >
+        <EntityTypeShape EntityType="PizzaBoxDatabase.Person" Width="1.5" PointX="9.125" PointY="3.625" />
+        <EntityTypeShape EntityType="PizzaBoxDatabase.Address" Width="1.5" PointX="6.875" PointY="6.875" />
+        <EntityTypeShape EntityType="PizzaBoxDatabase.Feature" Width="1.5" PointX="4.75" PointY="5.375" />
+        <EntityTypeShape EntityType="PizzaBoxDatabase.Item" Width="1.5" PointX="4.75" PointY="2" />
+        <EntityTypeShape EntityType="PizzaBoxDatabase.Order" Width="1.5" PointX="6.875" PointY="3.625" />
+        <EntityTypeShape EntityType="PizzaBoxDatabase.StateTax" Width="1.5" PointX="0.5" PointY="3.625" />
+        <EntityTypeShape EntityType="PizzaBoxDatabase.Outlet" Width="1.5" PointX="2.625" PointY="3.625" />
+        <EntityTypeShape EntityType="PizzaBoxDatabase.Employee" Width="1.5" PointX="9.125" PointY="0.5" />
+        <AssociationConnector Association="PizzaBoxDatabase.OutletEmployee" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="PizzaBoxDatabase.PersonAddress" />
+        <AssociationConnector Association="PizzaBoxDatabase.OutletAddress" />
+        <InheritanceConnector EntityType="PizzaBoxDatabase.Employee" />
+        <AssociationConnector Association="PizzaBoxDatabase.OutletOrder" />
+        <AssociationConnector Association="PizzaBoxDatabase.PersonOrder" />
+        <AssociationConnector Association="PizzaBoxDatabase.OutletFeature" />
+        <AssociationConnector Association="PizzaBoxDatabase.OutletItem" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

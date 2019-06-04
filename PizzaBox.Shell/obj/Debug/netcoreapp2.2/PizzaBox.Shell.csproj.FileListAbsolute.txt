@@ -1,0 +1,16 @@
+C:\Users\jmau0\Desktop\Revature\DOT NET CORE Week 1-3 Jump\Project-1\PizzaBox.Shell\bin\Debug\netcoreapp2.2\PizzaBox.Shell.deps.json
+C:\Users\jmau0\Desktop\Revature\DOT NET CORE Week 1-3 Jump\Project-1\PizzaBox.Shell\bin\Debug\netcoreapp2.2\PizzaBox.Shell.runtimeconfig.json
+C:\Users\jmau0\Desktop\Revature\DOT NET CORE Week 1-3 Jump\Project-1\PizzaBox.Shell\bin\Debug\netcoreapp2.2\PizzaBox.Shell.runtimeconfig.dev.json
+C:\Users\jmau0\Desktop\Revature\DOT NET CORE Week 1-3 Jump\Project-1\PizzaBox.Shell\bin\Debug\netcoreapp2.2\PizzaBox.Shell.dll
+C:\Users\jmau0\Desktop\Revature\DOT NET CORE Week 1-3 Jump\Project-1\PizzaBox.Shell\bin\Debug\netcoreapp2.2\PizzaBox.Shell.pdb
+C:\Users\jmau0\Desktop\Revature\DOT NET CORE Week 1-3 Jump\Project-1\PizzaBox.Shell\bin\Debug\netcoreapp2.2\PizzaBox.Data.dll
+C:\Users\jmau0\Desktop\Revature\DOT NET CORE Week 1-3 Jump\Project-1\PizzaBox.Shell\bin\Debug\netcoreapp2.2\PizzaBox.Domain.dll
+C:\Users\jmau0\Desktop\Revature\DOT NET CORE Week 1-3 Jump\Project-1\PizzaBox.Shell\bin\Debug\netcoreapp2.2\PizzaBox.Data.pdb
+C:\Users\jmau0\Desktop\Revature\DOT NET CORE Week 1-3 Jump\Project-1\PizzaBox.Shell\bin\Debug\netcoreapp2.2\PizzaBox.Domain.pdb
+C:\Users\jmau0\Desktop\Revature\DOT NET CORE Week 1-3 Jump\Project-1\PizzaBox.Shell\obj\Debug\netcoreapp2.2\PizzaBox.Shell.csprojAssemblyReference.cache
+C:\Users\jmau0\Desktop\Revature\DOT NET CORE Week 1-3 Jump\Project-1\PizzaBox.Shell\obj\Debug\netcoreapp2.2\PizzaBox.Shell.csproj.CoreCompileInputs.cache
+C:\Users\jmau0\Desktop\Revature\DOT NET CORE Week 1-3 Jump\Project-1\PizzaBox.Shell\obj\Debug\netcoreapp2.2\PizzaBox.Shell.AssemblyInfoInputs.cache
+C:\Users\jmau0\Desktop\Revature\DOT NET CORE Week 1-3 Jump\Project-1\PizzaBox.Shell\obj\Debug\netcoreapp2.2\PizzaBox.Shell.AssemblyInfo.cs
+C:\Users\jmau0\Desktop\Revature\DOT NET CORE Week 1-3 Jump\Project-1\PizzaBox.Shell\obj\Debug\netcoreapp2.2\PizzaBox.Shell.csproj.CopyComplete
+C:\Users\jmau0\Desktop\Revature\DOT NET CORE Week 1-3 Jump\Project-1\PizzaBox.Shell\obj\Debug\netcoreapp2.2\PizzaBox.Shell.dll
+C:\Users\jmau0\Desktop\Revature\DOT NET CORE Week 1-3 Jump\Project-1\PizzaBox.Shell\obj\Debug\netcoreapp2.2\PizzaBox.Shell.pdb

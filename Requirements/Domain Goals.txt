@@ -1,0 +1,5 @@
+Domain   = Abstract away Data EF classes and complexities
+
+IO       = Responsible for CRUD operations to include EventArg definitions
+Elements = Responsible for Entity encapsulations that supplement element level business logic
+Models   = Responsible for aggregate business logic and IO integrations

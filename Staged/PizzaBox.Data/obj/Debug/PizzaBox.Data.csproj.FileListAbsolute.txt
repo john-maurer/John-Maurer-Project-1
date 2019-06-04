@@ -1,0 +1,15 @@
+C:\Users\jmau0\Desktop\Revature\DOT NET CORE Week 1-3 Jump\Project-1\Staged\PizzaBox.Data\bin\Debug\PizzaBox.Data.dll.config
+C:\Users\jmau0\Desktop\Revature\DOT NET CORE Week 1-3 Jump\Project-1\Staged\PizzaBox.Data\bin\Debug\PizzaBox.Data.dll
+C:\Users\jmau0\Desktop\Revature\DOT NET CORE Week 1-3 Jump\Project-1\Staged\PizzaBox.Data\bin\Debug\PizzaBox.Data.pdb
+C:\Users\jmau0\Desktop\Revature\DOT NET CORE Week 1-3 Jump\Project-1\Staged\PizzaBox.Data\bin\Debug\EntityFramework.dll
+C:\Users\jmau0\Desktop\Revature\DOT NET CORE Week 1-3 Jump\Project-1\Staged\PizzaBox.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\jmau0\Desktop\Revature\DOT NET CORE Week 1-3 Jump\Project-1\Staged\PizzaBox.Data\bin\Debug\EntityFramework.SqlServerCompact.dll
+C:\Users\jmau0\Desktop\Revature\DOT NET CORE Week 1-3 Jump\Project-1\Staged\PizzaBox.Data\bin\Debug\System.Data.SqlServerCe.dll
+C:\Users\jmau0\Desktop\Revature\DOT NET CORE Week 1-3 Jump\Project-1\Staged\PizzaBox.Data\bin\Debug\EntityFramework.xml
+C:\Users\jmau0\Desktop\Revature\DOT NET CORE Week 1-3 Jump\Project-1\Staged\PizzaBox.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\jmau0\Desktop\Revature\DOT NET CORE Week 1-3 Jump\Project-1\Staged\PizzaBox.Data\bin\Debug\EntityFramework.SqlServerCompact.xml
+C:\Users\jmau0\Desktop\Revature\DOT NET CORE Week 1-3 Jump\Project-1\Staged\PizzaBox.Data\obj\Debug\PizzaBox.Data.csproj.CoreCompileInputs.cache
+C:\Users\jmau0\Desktop\Revature\DOT NET CORE Week 1-3 Jump\Project-1\Staged\PizzaBox.Data\obj\Debug\PizzaBox.Data.csproj.CopyComplete
+C:\Users\jmau0\Desktop\Revature\DOT NET CORE Week 1-3 Jump\Project-1\Staged\PizzaBox.Data\obj\Debug\PizzaBox.Data.dll
+C:\Users\jmau0\Desktop\Revature\DOT NET CORE Week 1-3 Jump\Project-1\Staged\PizzaBox.Data\obj\Debug\PizzaBox.Data.pdb
+C:\Users\jmau0\Desktop\Revature\DOT NET CORE Week 1-3 Jump\Project-1\Staged\PizzaBox.Data\obj\Debug\PizzaBox.Data.csprojAssemblyReference.cache

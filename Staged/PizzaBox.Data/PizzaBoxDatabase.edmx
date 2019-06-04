@@ -1,0 +1,573 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="PizzaBoxDatabase.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="PizzaBoxDatabaseStoreContainer">
+    <EntitySet Name="People" EntityType="PizzaBoxDatabase.Store.People" store:Type="Tables" Schema="PizzaBoxDbSchema" />
+    <EntitySet Name="Addresses" EntityType="PizzaBoxDatabase.Store.Addresses" store:Type="Tables" Schema="PizzaBoxDbSchema" />
+    <EntitySet Name="Features" EntityType="PizzaBoxDatabase.Store.Features" store:Type="Tables" Schema="PizzaBoxDbSchema" />
+    <EntitySet Name="Items" EntityType="PizzaBoxDatabase.Store.Items" store:Type="Tables" Schema="PizzaBoxDbSchema" />
+    <EntitySet Name="Orders" EntityType="PizzaBoxDatabase.Store.Orders" store:Type="Tables" Schema="PizzaBoxDbSchema" />
+    <EntitySet Name="StateTaxes" EntityType="PizzaBoxDatabase.Store.StateTaxes" store:Type="Tables" Schema="PizzaBoxDbSchema" />
+    <EntitySet Name="Outlets" EntityType="PizzaBoxDatabase.Store.Outlets" store:Type="Tables" Schema="PizzaBoxDbSchema" />
+    <EntitySet Name="People_Employee" EntityType="PizzaBoxDatabase.Store.People_Employee" store:Type="Tables" Schema="PizzaBoxDbSchema" />
+    <AssociationSet Name="OutletEmployee" Association="PizzaBoxDatabase.Store.OutletEmployee">
+      <End Role="Outlet" EntitySet="Outlets" />
+      <End Role="Employee" EntitySet="People_Employee" />
+    </AssociationSet>
+    <AssociationSet Name="PersonAddress" Association="PizzaBoxDatabase.Store.PersonAddress">
+      <End Role="Person" EntitySet="People" />
+      <End Role="Address" EntitySet="Addresses" />
+    </AssociationSet>
+    <AssociationSet Name="OutletAddress" Association="PizzaBoxDatabase.Store.OutletAddress">
+      <End Role="Outlet" EntitySet="Outlets" />
+      <End Role="Address" EntitySet="Addresses" />
+    </AssociationSet>
+    <AssociationSet Name="OutletOrder" Association="PizzaBoxDatabase.Store.OutletOrder">
+      <End Role="Outlet" EntitySet="Outlets" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="PersonOrder" Association="PizzaBoxDatabase.Store.PersonOrder">
+      <End Role="Person" EntitySet="People" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="OutletFeature" Association="PizzaBoxDatabase.Store.OutletFeature">
+      <End Role="Outlet" EntitySet="Outlets" />
+      <End Role="Feature" EntitySet="Features" />
+    </AssociationSet>
+    <AssociationSet Name="OutletItem" Association="PizzaBoxDatabase.Store.OutletItem">
+      <End Role="Outlet" EntitySet="Outlets" />
+      <End Role="Item" EntitySet="Items" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employee_inherits_Person" Association="PizzaBoxDatabase.Store.FK_Employee_inherits_Person">
+      <End Role="Person" EntitySet="People" />
+      <End Role="Employee" EntitySet="People_Employee" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="People">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="FName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MName" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="LName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Gender" Type="bit" Nullable="true" />
+    <Property Name="DoB" Type="datetime" Nullable="true" />
+    <Property Name="Phone" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Addresses">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PersonId" Type="uniqueidentifier" Nullable="true" />
+    <Property Name="OutletId" Type="uniqueidentifier" Nullable="true" />
+    <Property Name="State" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="City" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Street" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Zip" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Apt" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Features">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="OutletId" Type="uniqueidentifier" Nullable="true" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Cost" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Items">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="OutletId" Type="uniqueidentifier" Nullable="true" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Cost" Type="float" Nullable="false" />
+    <Property Name="Features" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Orders">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="OutletId" Type="uniqueidentifier" Nullable="true" />
+    <Property Name="PersonId" Type="uniqueidentifier" Nullable="true" />
+    <Property Name="DateOrdered" Type="datetime" Nullable="false" />
+    <Property Name="Items" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SubTotal" Type="float" Nullable="false" />
+    <Property Name="Total" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StateTaxes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Territory" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TaxRate" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Outlets">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Organization" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="People_Employee">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="OutletId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Username" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Position" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Wage" Type="float" Nullable="false" />
+    <Property Name="WageType" Type="float" Nullable="false" />
+    <Property Name="Status" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <Association Name="OutletEmployee">
+    <End Role="Outlet" Type="PizzaBoxDatabase.Store.Outlets" Multiplicity="1" />
+    <End Role="Employee" Type="PizzaBoxDatabase.Store.People_Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Outlet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="OutletId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PersonAddress">
+    <End Role="Person" Type="PizzaBoxDatabase.Store.People" Multiplicity="0..1" />
+    <End Role="Address" Type="PizzaBoxDatabase.Store.Addresses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Address">
+        <PropertyRef Name="PersonId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="OutletAddress">
+    <End Role="Outlet" Type="PizzaBoxDatabase.Store.Outlets" Multiplicity="0..1" />
+    <End Role="Address" Type="PizzaBoxDatabase.Store.Addresses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Outlet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Address">
+        <PropertyRef Name="OutletId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="OutletOrder">
+    <End Role="Outlet" Type="PizzaBoxDatabase.Store.Outlets" Multiplicity="0..1" />
+    <End Role="Order" Type="PizzaBoxDatabase.Store.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Outlet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="OutletId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PersonOrder">
+    <End Role="Person" Type="PizzaBoxDatabase.Store.People" Multiplicity="0..1" />
+    <End Role="Order" Type="PizzaBoxDatabase.Store.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="PersonId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="OutletFeature">
+    <End Role="Outlet" Type="PizzaBoxDatabase.Store.Outlets" Multiplicity="0..1" />
+    <End Role="Feature" Type="PizzaBoxDatabase.Store.Features" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Outlet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Feature">
+        <PropertyRef Name="OutletId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="OutletItem">
+    <End Role="Outlet" Type="PizzaBoxDatabase.Store.Outlets" Multiplicity="0..1" />
+    <End Role="Item" Type="PizzaBoxDatabase.Store.Items" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Outlet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Item">
+        <PropertyRef Name="OutletId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employee_inherits_Person">
+    <End Role="Person" Type="PizzaBoxDatabase.Store.People" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Employee" Type="PizzaBoxDatabase.Store.People_Employee" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="PizzaBoxDatabase" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="PizzaBoxDatabaseContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="People" EntityType="PizzaBoxDatabase.Person" />
+          <EntitySet Name="Addresses" EntityType="PizzaBoxDatabase.Address" />
+          <EntitySet Name="Features" EntityType="PizzaBoxDatabase.Feature" />
+          <EntitySet Name="Items" EntityType="PizzaBoxDatabase.Item" />
+          <EntitySet Name="Orders" EntityType="PizzaBoxDatabase.Order" />
+          <EntitySet Name="StateTaxes" EntityType="PizzaBoxDatabase.StateTax" />
+          <EntitySet Name="Outlets" EntityType="PizzaBoxDatabase.Outlet" />
+          <AssociationSet Name="OutletEmployee" Association="PizzaBoxDatabase.OutletEmployee">
+            <End Role="Outlet" EntitySet="Outlets" />
+            <End Role="Employee" EntitySet="People" />
+          </AssociationSet>
+          <AssociationSet Name="PersonAddress" Association="PizzaBoxDatabase.PersonAddress">
+            <End Role="Person" EntitySet="People" />
+            <End Role="Address" EntitySet="Addresses" />
+          </AssociationSet>
+          <AssociationSet Name="OutletAddress" Association="PizzaBoxDatabase.OutletAddress">
+            <End EntitySet="Outlets" Role="Outlet" />
+            <End EntitySet="Addresses" Role="Address" />
+          </AssociationSet>
+          <AssociationSet Name="OutletOrder" Association="PizzaBoxDatabase.OutletOrder">
+            <End Role="Outlet" EntitySet="Outlets" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="PersonOrder" Association="PizzaBoxDatabase.PersonOrder">
+            <End Role="Person" EntitySet="People" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="OutletFeature" Association="PizzaBoxDatabase.OutletFeature">
+            <End Role="Outlet" EntitySet="Outlets" />
+            <End Role="Feature" EntitySet="Features" />
+          </AssociationSet>
+          <AssociationSet Name="OutletItem" Association="PizzaBoxDatabase.OutletItem">
+            <End Role="Outlet" EntitySet="Outlets" />
+            <End Role="Item" EntitySet="Items" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="FName" Type="String" Nullable="false" />
+          <Property Name="MName" Type="String" Nullable="true" />
+          <Property Name="LName" Type="String" Nullable="false" />
+          <Property Name="Gender" Type="Boolean" Nullable="true" />
+          <Property Name="DoB" Type="DateTime" Nullable="true" />
+          <Property Name="Phone" Type="String" Nullable="false" />
+          <Property Name="Email" Type="String" Nullable="true" />
+          <NavigationProperty Name="Addresses" Relationship="PizzaBoxDatabase.PersonAddress" FromRole="Person" ToRole="Address" />
+          <NavigationProperty Name="Orders" Relationship="PizzaBoxDatabase.PersonOrder" FromRole="Person" ToRole="Order" />
+        </EntityType>
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="PersonId" Type="Guid" Nullable="true" />
+          <Property Name="OutletId" Nullable="true" Type="Guid" />
+          <Property Name="State" Type="String" Nullable="false" />
+          <Property Name="City" Type="String" Nullable="false" />
+          <Property Name="Street" Type="String" Nullable="false" />
+          <Property Name="Zip" Type="String" Nullable="false" />
+          <Property Name="Apt" Type="String" Nullable="true" />
+          <NavigationProperty Name="Person" Relationship="PizzaBoxDatabase.PersonAddress" FromRole="Address" ToRole="Person" />
+          <NavigationProperty Name="Outlet" Relationship="PizzaBoxDatabase.OutletAddress" FromRole="Address" ToRole="Outlet" />
+        </EntityType>
+        <EntityType Name="Feature">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="OutletId" Type="Guid" Nullable="true" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <Property Name="Cost" Type="Double" Nullable="false" />
+          <NavigationProperty Name="Outlet" Relationship="PizzaBoxDatabase.OutletFeature" FromRole="Feature" ToRole="Outlet" />
+        </EntityType>
+        <EntityType Name="Item">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="OutletId" Type="Guid" Nullable="true" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <Property Name="Cost" Type="Double" Nullable="false" />
+          <Property Name="Features" Type="String" Nullable="true" />
+          <NavigationProperty Name="Outlet" Relationship="PizzaBoxDatabase.OutletItem" FromRole="Item" ToRole="Outlet" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="OutletId" Type="Guid" Nullable="true" />
+          <Property Name="PersonId" Type="Guid" Nullable="true" />
+          <Property Name="DateOrdered" Type="DateTime" Nullable="false" />
+          <Property Name="Items" Type="String" Nullable="false" />
+          <Property Name="SubTotal" Type="Double" Nullable="false" />
+          <Property Name="Total" Type="Double" Nullable="false" />
+          <NavigationProperty Name="Outlet" Relationship="PizzaBoxDatabase.OutletOrder" FromRole="Order" ToRole="Outlet" />
+          <NavigationProperty Name="Person" Relationship="PizzaBoxDatabase.PersonOrder" FromRole="Order" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="StateTax">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="Territory" Type="String" Nullable="false" />
+          <Property Name="TaxRate" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Outlet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="Organization" Type="String" Nullable="false" />
+          <NavigationProperty Name="Employees" Relationship="PizzaBoxDatabase.OutletEmployee" FromRole="Outlet" ToRole="Employee" />
+          <NavigationProperty Name="Addresses" Relationship="PizzaBoxDatabase.OutletAddress" FromRole="Outlet" ToRole="Address" />
+          <NavigationProperty Name="Orders" Relationship="PizzaBoxDatabase.OutletOrder" FromRole="Outlet" ToRole="Order" />
+          <NavigationProperty Name="Features" Relationship="PizzaBoxDatabase.OutletFeature" FromRole="Outlet" ToRole="Feature" />
+          <NavigationProperty Name="Items" Relationship="PizzaBoxDatabase.OutletItem" FromRole="Outlet" ToRole="Item" />
+        </EntityType>
+        <EntityType Name="Employee" BaseType="PizzaBoxDatabase.Person">
+          <Property Name="OutletId" Type="Guid" Nullable="false" />
+          <Property Name="Username" Type="String" Nullable="false" />
+          <Property Name="Password" Type="String" Nullable="false" />
+          <Property Name="Position" Type="String" Nullable="false" />
+          <Property Name="Wage" Type="Double" Nullable="false" />
+          <Property Name="WageType" Type="Double" Nullable="false" />
+          <NavigationProperty Name="Outlet" Relationship="PizzaBoxDatabase.OutletEmployee" FromRole="Employee" ToRole="Outlet" />
+          <Property Name="Status" Type="String" Nullable="false" />
+        </EntityType>
+        <Association Name="OutletEmployee">
+          <End Type="PizzaBoxDatabase.Outlet" Role="Outlet" Multiplicity="1" />
+          <End Type="PizzaBoxDatabase.Employee" Role="Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Outlet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="OutletId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PersonAddress">
+          <End Type="PizzaBoxDatabase.Person" Role="Person" Multiplicity="0..1" />
+          <End Type="PizzaBoxDatabase.Address" Role="Address" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Address">
+              <PropertyRef Name="PersonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="OutletAddress">
+          <End Type="PizzaBoxDatabase.Outlet" Multiplicity="0..1" Role="Outlet" />
+          <End Type="PizzaBoxDatabase.Address" Multiplicity="*" Role="Address" />
+          <ReferentialConstraint>
+            <Principal Role="Outlet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Address">
+              <PropertyRef Name="OutletId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="OutletOrder">
+          <End Type="PizzaBoxDatabase.Outlet" Role="Outlet" Multiplicity="0..1" />
+          <End Type="PizzaBoxDatabase.Order" Role="Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Outlet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="OutletId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PersonOrder">
+          <End Type="PizzaBoxDatabase.Person" Role="Person" Multiplicity="0..1" />
+          <End Type="PizzaBoxDatabase.Order" Role="Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="PersonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="OutletFeature">
+          <End Type="PizzaBoxDatabase.Outlet" Role="Outlet" Multiplicity="0..1" />
+          <End Type="PizzaBoxDatabase.Feature" Role="Feature" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Outlet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Feature">
+              <PropertyRef Name="OutletId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="OutletItem">
+          <End Type="PizzaBoxDatabase.Outlet" Role="Outlet" Multiplicity="0..1" />
+          <End Type="PizzaBoxDatabase.Item" Role="Item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Outlet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Item">
+              <PropertyRef Name="OutletId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PizzaBoxDatabaseStoreContainer" CdmEntityContainer="PizzaBoxDatabaseContext">
+    <EntitySetMapping Name="People">
+      <EntityTypeMapping TypeName="IsTypeOf(PizzaBoxDatabase.Person)">
+        <MappingFragment StoreEntitySet="People">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="MName" ColumnName="MName" />
+          <ScalarProperty Name="LName" ColumnName="LName" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="DoB" ColumnName="DoB" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(PizzaBoxDatabase.Employee)">
+        <MappingFragment StoreEntitySet="People_Employee">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="OutletId" ColumnName="OutletId" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="Wage" ColumnName="Wage" />
+          <ScalarProperty Name="WageType" ColumnName="WageType" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Addresses">
+      <EntityTypeMapping TypeName="IsTypeOf(PizzaBoxDatabase.Address)">
+        <MappingFragment StoreEntitySet="Addresses">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PersonId" ColumnName="PersonId" />
+          <ScalarProperty Name="OutletId" ColumnName="OutletId" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="Zip" ColumnName="Zip" />
+          <ScalarProperty Name="Apt" ColumnName="Apt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Features">
+      <EntityTypeMapping TypeName="IsTypeOf(PizzaBoxDatabase.Feature)">
+        <MappingFragment StoreEntitySet="Features">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="OutletId" ColumnName="OutletId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Items">
+      <EntityTypeMapping TypeName="IsTypeOf(PizzaBoxDatabase.Item)">
+        <MappingFragment StoreEntitySet="Items">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="OutletId" ColumnName="OutletId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Features" ColumnName="Features" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="IsTypeOf(PizzaBoxDatabase.Order)">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="OutletId" ColumnName="OutletId" />
+          <ScalarProperty Name="PersonId" ColumnName="PersonId" />
+          <ScalarProperty Name="DateOrdered" ColumnName="DateOrdered" />
+          <ScalarProperty Name="Items" ColumnName="Items" />
+          <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StateTaxes">
+      <EntityTypeMapping TypeName="IsTypeOf(PizzaBoxDatabase.StateTax)">
+        <MappingFragment StoreEntitySet="StateTaxes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Territory" ColumnName="Territory" />
+          <ScalarProperty Name="TaxRate" ColumnName="TaxRate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Outlets">
+      <EntityTypeMapping TypeName="IsTypeOf(PizzaBoxDatabase.Outlet)">
+        <MappingFragment StoreEntitySet="Outlets">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Organization" ColumnName="Organization" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="DefaultDatabaseSchema" Value="PizzaBoxDbSchema" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

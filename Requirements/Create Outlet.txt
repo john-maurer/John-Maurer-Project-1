@@ -1,0 +1,15 @@
+
+Outlet
+
+	Must have at least one employee
+	
+Employee
+
+	Must register personal information
+	Must have address information
+
+
+Add/Remove Order
+
+1. Address
+	

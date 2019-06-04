@@ -1,0 +1,72 @@
+How can a view process multiple models?
+
+@model - only one
+other persistent storage used for multiple models
+
+eager loading: when you have two related entities its the order of dependant construction using Include method
+
+2 wayts to get client data to the controller to be processed
+
+model binding
+attribute binding
+
+Between razor comments (@**@) and ASP (<!-- -->) comments
+
+Razor comments are never visible (always use them)
+
+Look into server-side vs client side validation!!!
+
+Render sections
+
+MVC Life-Cycle
+
+	Routing->MVCHandler.ProcessRequest ( httpContext )->Controller->Action Execution->View Result->View Engine->View
+
+Passing Data (State Management)
+
+1) Client-Side
+	Session
+	Cookies
+	Cache
+	Local Storage
+
+2) Server-Side
+	View-Data
+	ViewBag
+	TempData <- Have to allow cookies or Session
+	Session
+	Application
+
+	https://www.dotnettricks.com/learn/mvc/aspnet-mvc-request-life-cycle
+
+How Routing Works
+
+ControllerFactory->Controller->Actions
+
+MVC Triggers
+
+html-partial
+
+speaking of html
+
+What can be included into <head>
+link, meta, title and style (script too but bad idea, better at the bottom)
+
+HTML Attributes - Difference between ID and Name
+
+id attribute used for identifying indiviual element
+name used for identifying a group of elements
+
+How to define CSS root
+	Set of rules for selectors
+
+CSS Sytle Importance (uses ! - inline, bad )
+
+CSS Inheritance
+CSS Select
+CSS Box Model
+T-RL-B
+Media Query
+psuedo-selector - manages css styles state
+tag selector
+* selects everything
